@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Referentie — Telmodellen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/lesson.css" />
+</head>
+<body>
+  <header>
+    <div class="meta">Referentie · printvriendelijk</div>
+    <h1>Telmodellen-kaart</h1>
+    <p class="lede">Eerst model, dan rekenen. Alleen delen bij echte overtelling.</p>
+    <div class="nav-lessons">
+      <a href="../index.html">Overzicht</a>
+      <a href="telmodellen.html" class="here">Kaart</a>
+      <a href="../lessons/01-slotjes-herhaling.html">Les 1</a>
+      <a href="../lessons/02-taken-of-groepje.html">Les 2</a>
+      <a href="../lessons/03-herhaalde-symbolen.html">Les 3</a>
+      <a href="../lessons/04-alle-of-precies.html">Les 4</a>
+      <a href="../lessons/05-routes-en-mix.html">Les 5</a>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Beslisboom (hardop)</h2>
+      <ol class="check">
+        <li>Mag iets <strong>herhaald</strong> worden? → teken slotjes per stap</li>
+        <li>Maakt de <strong>volgorde</strong> uit? <em>Wie-waar</em> (ja) of <em>wie-mee</em> (nee)?</li>
+        <li>Heb ik eerst te veel geteld (identieke objecten)? → pas dan delen</li>
+      </ol>
+      <table class="gloss-table">
+        <thead>
+          <tr><th>Plaatje</th><th>Model</th><th>Formule</th></tr>
+        </thead>
+        <tbody>
+          <tr id="macht">
+            <td>Elke stap dezelfde keuzes (dobbel, code, kop/munt-totaal)</td>
+            <td>Machtsprobleem</td>
+            <td><span class="formula">n<sup>k</sup></span></td>
+          </tr>
+          <tr id="permutatie">
+            <td>Wie-waar: taken/plekken (medailles, rij zonder herhaling)</td>
+            <td>Permutatie</td>
+            <td><span class="formula">P(n,k)=n!/(n−k)!</span></td>
+          </tr>
+          <tr id="faculteit">
+            <td>Alle n verschillende objecten in een volgorde</td>
+            <td>Faculteit</td>
+            <td><span class="formula">n!</span></td>
+          </tr>
+          <tr id="combinatie">
+            <td>Wie-mee: groepje / posities voor één type</td>
+            <td>Combinatie</td>
+            <td><span class="formula">C(n,k)=n!/(k!(n−k)!)</span></td>
+          </tr>
+          <tr id="rooster">
+            <td>Rooster / scoreverloop naar vaste eindstand</td>
+            <td>Combinatie (= routes)</td>
+            <td><span class="formula">C(a+b, a)</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="cite">
+        Methode: Moderne Wiskunde — Systematisch tellen (§ permutaties, roosterroutes, combinaties, goed telmodel).
+        Uitleg P vs C:
+        <a href="https://math4all.pragma-pod.nl/resources/section-pdfs/hd-b15.pdf" target="_blank" rel="noopener">Math4All hd-b15</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Kop/munt of ja/nee</h2>
+      <table class="gloss-table">
+        <thead>
+          <tr><th>Vraag</th><th>Antwoord</th></tr>
+        </thead>
+        <tbody>
+          <tr id="totaal"><td>Alle mogelijke rijen van n worpen</td><td><span class="formula">2<sup>n</sup></span></td></tr>
+          <tr id="precies"><td>Precies k keer kop (of precies k× ja)</td><td><span class="formula">C(n,k)</span></td></tr>
+        </tbody>
+      </table>
+      <p>Voorbeeld Math4All: 5 geldstukken → totaal <span class="formula">2<sup>5</sup>=32</span>; precies 2× kop → <span class="formula">C(5,2)=10</span>.</p>
+    </section>
+
+    <section>
+      <h2>Scoreverlopen</h2>
+      <ul>
+        <li>Eindstand <strong>a–b</strong> (zonder extra eis): <span class="formula">C(a+b, a)</span></li>
+        <li>Via tussenstand: routes tot tussen × routes daarna</li>
+        <li>Niet <span class="formula">2<sup>a+b</sup></span> als de eindstand vastligt</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Spookdeling</h2>
+      <p><strong>Fout:</strong> “het is een 5-cijferig getal, dus ÷5.”</p>
+      <p><strong>Goed:</strong> alleen delen als je eerst volgordes van <em>identieke</em> objecten apart hebt geteld.</p>
+      <p>Voorbeeld: vier 3’en en één 7 → posities voor de 7: <span class="formula">C(5,1)=5</span>. Niet eerst 5! en dan gokkend delen.</p>
+    </section>
+  </main>
+  <footer>Print deze kaart naast je huiswerk.</footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les 1 — Slotjes: herhaling of niet?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/lesson.css" />
+</head>
+<body>
+  <header>
+    <div class="meta">VWO4 · Systematisch tellen · Les 1</div>
+    <h1>Slotjes: herhaling of niet?</h1>
+    <p class="lede">Teken eerst de stappen als lege vakjes. Vul in hoeveel keuzes er per vakje zijn. Dan pas vermenigvuldigen.</p>
+    <div class="nav-lessons">
+      <a href="../index.html">Overzicht</a>
+      <a href="../reference/telmodellen.html">Kaart</a>
+      <a href="01-slotjes-herhaling.html" class="here">Les 1</a>
+      <a href="02-taken-of-groepje.html">Les 2</a>
+      <a href="03-herhaalde-symbolen.html">Les 3</a>
+      <a href="04-alle-of-precies.html">Les 4</a>
+      <a href="05-routes-en-mix.html">Les 5</a>
+    </div>
+    <div class="hud">
+      <strong>Voortgang:</strong>
+      <span id="answered">0</span>/<span id="total">0</span> ·
+      <span id="score">0</span> goed
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Verhaal: pizza-code van vier letters</h2>
+      <div class="story">
+        <strong>Situatie.</strong> Bij de pizzeria kies je een geheime code van <em>vier</em> letters.
+        Er zijn 5 knoppen: A, B, C, D, E. Twee vragen — twee verschillende antwoorden.
+      </div>
+    </section>
+
+    <section>
+      <h2>Vraag 1 — letters mogen herhalen</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Elk vakje opnieuw volle keuze</h3>
+          <p>
+            Positie 1: 5 keuzes. Positie 2: weer 5 (A mag opnieuw). Positie 3: weer 5. Positie 4: weer 5.
+            Het plaatje is vier even grote slotjes.
+          </p>
+        </div>
+      </div>
+      <div class="viz" data-viz="slots" data-choices="5,5,5,5" data-title="Met herhaling — elke stap 5" data-caption="Totaal 5⁴ = 625 codes."></div>
+      <p>
+        Dit noemen ze later een <strong>machtsprobleem</strong>: elke stap dezelfde hoeveelheid keuzes.
+        Schrijf: <span class="formula">5⁴ = 625</span>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Vraag 2 — geen letter twee keer</h2>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Keuze krimpt</h3>
+          <p>
+            Eerste letter: 5 opties. Tweede: nog 4 over. Derde: 3. Vierde: 2.
+            De slotjes worden kleiner — dat teken je mee.
+          </p>
+        </div>
+      </div>
+      <div class="viz" data-viz="slots" data-choices="5,4,3,2" data-title="Zonder herhaling — krimpende keuzes" data-caption="Totaal 5×4×3×2 = 120 codes."></div>
+      <p>
+        Geen “delen door 4” aan het eind. Je hebt niet te veel geteld — je hebt precies de verschillende volgordes.
+        Later: dit lijkt op een <strong>permutatie</strong> / afdalend product.
+      </p>
+    </section>
+
+    <div class="watch">
+      <div class="watch-label">Tweede stem · YouTube</div>
+      <a href="https://www.youtube.com/watch?v=iYsKW_6PSQM" target="_blank" rel="noopener">Menno — Tellen met en zonder herhaling</a>
+      <span> (≈8 min)</span>
+      <p class="bridge">
+        Brugzin: <strong>met herhaling</strong> = jouw pizza-code met herhaalde letters (gelijke slotjes).
+        <strong>zonder herhaling</strong> = krimpende slotjes. Teken mee terwijl hij praat.
+      </p>
+    </div>
+
+    <section>
+      <h2>Valkuil van de SO: spookdeling</h2>
+      <div class="callout-name">Delen mag alleen bij overtelling</div>
+      <p>
+        Op de SO stond soms een goed product, en daarna ÷5 “omdat er 5 cijfers zijn”.
+        Dat is fout — tenzij je eerst 5× te veel hebt geteld (dat komt bij groepjes / herhaalde symbolen).
+      </p>
+      <div class="compare-row">
+        <div class="compare-pane waar">
+          <h3>Wél delen</h3>
+          <p>Je hebt Ana+Bea én Bea+Ana apart geteld, maar het is één groepje → deel door 2.</p>
+        </div>
+        <div class="compare-pane mee">
+          <h3>Niet delen</h3>
+          <p>Codes A–E zonder herhaling: 5×4×3×2 is al het juiste aantal. Geen ÷4.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Oefenen</h2>
+
+      <div class="q" data-type="mc" data-id="q1" data-answer="b"
+           data-explain="Elke worp opnieuw 6 → 6×6×6 = 6³. Gelijk slotjes-plaatje.">
+        <div class="q-num">Vraag 1 · dobbel</div>
+        <p class="prompt">Drie worpen met één dobbelsteen. Hoeveel rijen?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="a" /><span>3! = 6 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q1" value="b" /><span>6³ = 216 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q1" value="c" /><span>6×5×4 = 120 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q1" value="d" /><span>C(6,3) = 20 verschillende rijen</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q2" data-answer="c"
+           data-explain="Zonder herhaling: 7×6×5. Niet delen — geen overtelling.">
+        <div class="q-num">Vraag 2 · pincode</div>
+        <p class="prompt">3 verschillende cijfers uit 1–7, volgorde telt. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="a" /><span>210 : 3 = 70 codes</span></label>
+          <label class="opt"><input type="radio" name="q2" value="b" /><span>7³ : 3 = 114 codes</span></label>
+          <label class="opt"><input type="radio" name="q2" value="c" /><span>7×6×5 = 210 codes</span></label>
+          <label class="opt"><input type="radio" name="q2" value="d" /><span>C(7,3) = 35 codes</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q3" data-answer="a"
+           data-explain="Delen alleen bij echte overtelling — niet omdat ‘er 4 letters zijn’.">
+        <div class="q-num">Vraag 3 · delen</div>
+        <p class="prompt">Wanneer mag je aan het eind door 4 delen?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="a" /><span>Als je eerst 4× te veel hebt geteld</span></label>
+          <label class="opt"><input type="radio" name="q3" value="b" /><span>Als de code uit vier letters bestaat</span></label>
+          <label class="opt"><input type="radio" name="q3" value="c" /><span>Als je twijfelt tussen macht en n!</span></label>
+          <label class="opt"><input type="radio" name="q3" value="d" /><span>Als elke stap dezelfde keuzes heeft</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q4" data-answer="d"
+           data-explain="Machtsprobleem = elke stap dezelfde keuzes (herhaling mag).">
+        <div class="q-num">Vraag 4 · label</div>
+        <p class="prompt">Wanneer is het een machtsprobleem?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="a" /><span>Altijd als je met n! rekent</span></label>
+          <label class="opt"><input type="radio" name="q4" value="b" /><span>Altijd als je met C(n,k) rekent</span></label>
+          <label class="opt"><input type="radio" name="q4" value="c" /><span>Altijd als je ergens deelt door k</span></label>
+          <label class="opt"><input type="radio" name="q4" value="d" /><span>Als elke stap dezelfde keuzes heeft</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="final"
+           data-v100="Mooi. Slotjes + herhaling zitten vast."
+           data-v70="Sterk. Lees de spookdeling nog één keer hardop."
+           data-v40="Teken bij elke som eerst de slotjes, dan pas rekenen."
+           data-v0="Scroll terug naar pizza-vraag 1 en 2, dan quiz opnieuw.">
+        <strong>Klaar.</strong>
+        <p data-final-msg></p>
+        <p>Volgende: <a href="02-taken-of-groepje.html">Les 2 — Taken of groepje?</a></p>
+      </div>
+    </section>
+
+    <p class="cite">
+      Primair: <a href="https://www.youtube.com/watch?v=iYsKW_6PSQM" target="_blank" rel="noopener">Menno — met/zonder herhaling</a>
+      · <a href="../reference/telmodellen.html">Telmodellen-kaart</a>
+    </p>
+    <div class="agent-note">
+      <strong>Vraag het de agent</strong> — teken je slotjes in woorden (“eerste 5, dan 4…”) en vraag of het klopt.
+    </div>
+  </main>
+  <footer>Les 1</footer>
+  <script src="../assets/viz.js"></script>
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

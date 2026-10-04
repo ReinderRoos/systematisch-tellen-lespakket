@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les 5 — Routes + proefwerk-mix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/lesson.css" />
+</head>
+<body>
+  <header>
+    <div class="meta">VWO4 · Systematisch tellen · Les 5</div>
+    <h1>Routes + proefwerk-mix</h1>
+    <p class="lede">Een roosterroute is een rijtje van twee soorten stappen. Daarna alles door elkaar — zoals op het proefwerk.</p>
+    <div class="nav-lessons">
+      <a href="../index.html">Overzicht</a>
+      <a href="../reference/telmodellen.html">Kaart</a>
+      <a href="01-slotjes-herhaling.html">Les 1</a>
+      <a href="02-taken-of-groepje.html">Les 2</a>
+      <a href="03-herhaalde-symbolen.html">Les 3</a>
+      <a href="04-alle-of-precies.html">Les 4</a>
+      <a href="05-routes-en-mix.html" class="here">Les 5</a>
+    </div>
+    <div class="hud">
+      <strong>Voortgang:</strong>
+      <span id="answered">0</span>/<span id="total">0</span> ·
+      <span id="score">0</span> goed
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Verhaal: 3 rechts, 2 omhoog</h2>
+      <div class="story">
+        <strong>Situatie.</strong> Van schoolplein naar fietsenhok: je mag alleen → en ↑.
+        Je hebt precies <em>3 stappen rechts</em> en <em>2 omhoog</em> nodig.
+        Elke volgorde van die vijf stappen is een andere route.
+      </div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Route = letterrijtje</h3>
+          <p>
+            Schrijf R voor rechts, U voor omhoog.
+            Je zoekt rijen met 3× R en 2× U — precies B3/B4.
+            Kies 2 posities (van 5) voor U: <span class="formula">C(5,2) = 10</span>.
+          </p>
+        </div>
+      </div>
+      <div class="viz" data-viz="positions" data-n="5" data-k="2" data-symbol-hi="U" data-symbol-lo="R"></div>
+      <p class="cite">Algemeen: a stappen rechts, b omhoog → C(a+b, a) of C(a+b, b).</p>
+    </section>
+
+    <section>
+      <h2>Via een tussenpunt</h2>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Vermenigvuldig twee stukken</h3>
+          <p>
+            Moet je via een vast punt? Splits: aantal routes start→tussen × tussen→eind.
+            Elke helft is weer een klein rooster = een C.
+            (Dit was V7-type op de SO.)
+          </p>
+        </div>
+      </div>
+      <div class="callout-name">Tussenpunt: C₁ × C₂</div>
+    </section>
+
+    <div class="watch">
+      <div class="watch-label">Tweede stem · YouTube</div>
+      <p>
+        <a href="https://www.youtube.com/watch?v=GEIoqj6-vdY" target="_blank" rel="noopener">Menno — Aantal routes in een rooster</a>
+        (≈5 min)
+      </p>
+      <p class="bridge">
+        Brugzin: roosterroute = <strong>rijtje R/U</strong> = posities kiezen = C(a+b, a).
+      </p>
+    </div>
+
+    <div class="watch">
+      <div class="watch-label">Brug rijtje → rooster</div>
+      <a href="https://www.youtube.com/watch?v=ny3ZingMiXc" target="_blank" rel="noopener">Wijnja — Van rijtje naar rooster</a>
+      <span> (≈5 min)</span>
+    </div>
+
+    <div class="watch">
+      <div class="watch-label">Dieper · spring naar routes</div>
+      <a href="https://www.youtube.com/watch?v=jQOkgFKZBqs&amp;t=494s" target="_blank" rel="noopener">Bob Pruiksma — Rijtjes &amp; routes (vanaf 8:14)</a>
+      <p class="bridge">
+        Brugzin: eerste deel is A/B-rijtjes (ken je uit B4); vanaf 8:14 wordt het rooster getekend.
+      </p>
+    </div>
+
+    <section>
+      <h2>Checklist op papier (proefwerk)</h2>
+      <ol>
+        <li><strong>Plaatje:</strong> slotjes / wie-waar / wie-mee / alle-rijen / routes</li>
+        <li><strong>Formule:</strong> macht, P, C, 2ⁿ, C(a+b,a) …</li>
+        <li><strong>Reken:</strong> GR of hand — en géén spookdeling</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Mix — alles door elkaar</h2>
+
+      <div class="q" data-type="mc" data-id="q1" data-answer="b"
+           data-explain="3R+2U → kies 2 posities voor U → C(5,2)=10.">
+        <div class="q-num">Vraag 1 · rooster</div>
+        <p class="prompt">3 rechts, 2 omhoog. Aantal routes?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="a" /><span>3×2 = 6 verschillende routes</span></label>
+          <label class="opt"><input type="radio" name="q1" value="b" /><span>C(5,2) = 10 verschillende routes</span></label>
+          <label class="opt"><input type="radio" name="q1" value="c" /><span>5! = 120 verschillende routes</span></label>
+          <label class="opt"><input type="radio" name="q1" value="d" /><span>2⁵ = 32 verschillende routes</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q2" data-answer="a"
+           data-explain="Taken (goud/zilver) → wie-waar → 6×5=30.">
+        <div class="q-num">Vraag 2 · medailles</div>
+        <p class="prompt">6 lopers, goud en zilver. Aantal uitslagen?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="a" /><span>6×5 = 30 verschillende uitslagen</span></label>
+          <label class="opt"><input type="radio" name="q2" value="b" /><span>C(6,2) = 15 verschillende uitslagen</span></label>
+          <label class="opt"><input type="radio" name="q2" value="c" /><span>6² = 36 verschillende uitslagen</span></label>
+          <label class="opt"><input type="radio" name="q2" value="d" /><span>30 : 2 = 15 verschillende uitslagen</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q3" data-answer="c"
+           data-explain="Geen taken → wie-mee → C(6,2)=15.">
+        <div class="q-num">Vraag 3 · duo</div>
+        <p class="prompt">Uit 6 vrienden een duo zonder taken. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="a" /><span>6×5 = 30 verschillende duo’s</span></label>
+          <label class="opt"><input type="radio" name="q3" value="b" /><span>6² = 36 verschillende duo’s</span></label>
+          <label class="opt"><input type="radio" name="q3" value="c" /><span>C(6,2) = 15 verschillende duo’s</span></label>
+          <label class="opt"><input type="radio" name="q3" value="d" /><span>2⁶ = 64 verschillende duo’s</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q4" data-answer="d"
+           data-explain="Precies 4× munt in 8 → C(8,4)=70. Niet 2⁸.">
+        <div class="q-num">Vraag 4 · munten</div>
+        <p class="prompt">8× kop/munt. Rijen met precies 4× munt?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="a" /><span>2⁸ = 256 rijen met 4× munt</span></label>
+          <label class="opt"><input type="radio" name="q4" value="b" /><span>8×4 = 32 rijen met 4× munt</span></label>
+          <label class="opt"><input type="radio" name="q4" value="c" /><span>P(8,4) = 1680 rijen</span></label>
+          <label class="opt"><input type="radio" name="q4" value="d" /><span>C(8,4) = 70 rijen met 4× munt</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q5" data-answer="b"
+           data-explain="Met herhaling: 4³. Zonder zou 4×3×2 zijn.">
+        <div class="q-num">Vraag 5 · code</div>
+        <p class="prompt">Code van 3 letters uit A–D, herhaling mag. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q5" value="a" /><span>4×3×2 = 24 codes</span></label>
+          <label class="opt"><input type="radio" name="q5" value="b" /><span>4³ = 64 codes</span></label>
+          <label class="opt"><input type="radio" name="q5" value="c" /><span>C(4,3) = 4 codes</span></label>
+          <label class="opt"><input type="radio" name="q5" value="d" /><span>3⁴ = 81 codes</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q6" data-answer="a"
+           data-explain="Start→tussen C(3,1)=3 en tussen→eind C(3,2)=3 → 3×3=9.">
+        <div class="q-num">Vraag 6 · tussenpunt</div>
+        <p class="prompt">Routes via vast punt: C(3,1)×C(3,2). Wat is dat?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q6" value="a" /><span>3×3 = 9 routes via dat punt</span></label>
+          <label class="opt"><input type="radio" name="q6" value="b" /><span>3+3 = 6 routes via dat punt</span></label>
+          <label class="opt"><input type="radio" name="q6" value="c" /><span>C(6,3) = 20 routes via dat punt</span></label>
+          <label class="opt"><input type="radio" name="q6" value="d" /><span>3!×3! = 36 routes via dat punt</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="final"
+           data-v100="Proefwerk-klaar op modelkeuze. Succes."
+           data-v70="Sterk. Herhaal de fouten hardop met de checklist."
+           data-v40="Pak les 2 en les 4 nog eens — dat waren de SO-gaten."
+           data-v0="Terug naar het overzicht; doe les 2 en les 4 opnieuw vóór deze mix.">
+        <strong>Klaar.</strong>
+        <p data-final-msg></p>
+        <p>
+          Naslag: <a href="../reference/telmodellen.html">Telmodellen-kaart</a>
+          · <a href="../index.html">Overzicht</a>
+        </p>
+      </div>
+    </section>
+
+    <div class="agent-note">
+      <strong>Vraag het de agent</strong> — stuur huiswerk V7 of een rooster-som; we kalibreren de getallen.
+    </div>
+  </main>
+  <footer>Les 5</footer>
+  <script src="../assets/viz.js"></script>
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

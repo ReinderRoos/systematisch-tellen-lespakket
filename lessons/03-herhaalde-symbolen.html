@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les 3 — Zelfde symbolen opnieuw</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/lesson.css" />
+</head>
+<body>
+  <header>
+    <div class="meta">VWO4 · Systematisch tellen · Les 3</div>
+    <h1>Zelfde symbolen opnieuw</h1>
+    <p class="lede">Als letters of cijfers herhaald mogen (of moeten), tel je vaak posities — dat is een combinatie-plaatje.</p>
+    <div class="nav-lessons">
+      <a href="../index.html">Overzicht</a>
+      <a href="../reference/telmodellen.html">Kaart</a>
+      <a href="01-slotjes-herhaling.html">Les 1</a>
+      <a href="02-taken-of-groepje.html">Les 2</a>
+      <a href="03-herhaalde-symbolen.html" class="here">Les 3</a>
+      <a href="04-alle-of-precies.html">Les 4</a>
+      <a href="05-routes-en-mix.html">Les 5</a>
+    </div>
+    <div class="hud">
+      <strong>Voortgang:</strong>
+      <span id="answered">0</span>/<span id="total">0</span> ·
+      <span id="score">0</span> goed
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Verhaal: shirtnummers op een rij</h2>
+      <div class="story">
+        <strong>Situatie.</strong> Je maakt een rij van 5 shirtjes.
+        Er moeten precies <em>twee</em> shirts met nummer <strong>7</strong> en drie met nummer <strong>3</strong>.
+        Hoeveel verschillende rijen?
+      </div>
+    </section>
+
+    <section>
+      <h2>Stap 1 — niet alle letters zijn uniek</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Waarom 5! te groot is</h3>
+          <p>
+            Als alle vijf shirts verschillend waren: 5! = 120.
+            Maar de twee zevens zijn niet van elkaar te onderscheiden.
+            Wissel je ze om, dan ziet de rij er hetzelfde uit — je hebt die rij dubbel geteld.
+          </p>
+        </div>
+      </div>
+      <p>
+        Zelfde voor de drie driën: die kun je onderling verwisselen zonder nieuw beeld.
+        Formeel: <span class="formula">5! / (2!·3!)</span> — of simpeler: kies eerst de plekken voor de 7’en.
+      </p>
+    </section>
+
+    <section>
+      <h2>Stap 2 — kies posities voor de 7</h2>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Vijf vakjes, twee keer een 7</h3>
+          <p>
+            Je kiest <em>welke twee van de vijf posities</em> een 7 krijgen.
+            De rest wordt 3. Dat is precies <strong>wie-mee</strong> voor posities: C(5,2).
+          </p>
+        </div>
+      </div>
+      <div class="viz" data-viz="positions" data-n="5" data-k="2" data-symbol-hi="7" data-symbol-lo="3"></div>
+      <p>
+        Antwoord: <span class="formula">C(5,2) = 10</span>.
+        Zelfde als <span class="formula">5!/(2!·3!) = 10</span>.
+      </p>
+    </section>
+
+    <div class="watch">
+      <div class="watch-label">Tweede stem · YouTube</div>
+      <a href="https://www.youtube.com/watch?v=_Wxur0Lm4Ak" target="_blank" rel="noopener">WiskundeAcademie — permutaties bij gelijke elementen</a>
+      <span> (≈5 min)</span>
+      <p class="bridge">
+        Brugzin: “gelijke letters” in het filmpje = jouw twee 7’en.
+        Delen door 2! (en 3!) = niet dubbel tellen. Of: kies posities → <strong>C(n,k)</strong>.
+      </p>
+    </div>
+
+    <div class="watch">
+      <div class="watch-label">Formule-opfrisser</div>
+      <a href="https://www.youtube.com/watch?v=bqWSoqDRtnM" target="_blank" rel="noopener">WiskundeAcademie — Combinaties van r uit n</a>
+      <p class="bridge">
+        Brugzin: r uit n hier = <strong>r posities kiezen</strong> voor het zeldzame symbool.
+      </p>
+    </div>
+
+    <section>
+      <h2>Oefenen</h2>
+
+      <div class="q" data-type="mc" data-id="q1" data-answer="b"
+           data-explain="Kies 2 posities voor A uit 4 → C(4,2)=6. Rest wordt B.">
+        <div class="q-num">Vraag 1 · letters</div>
+        <p class="prompt">Rijen van 4: precies twee A’s en twee B’s. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="a" /><span>4! = 24 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q1" value="b" /><span>C(4,2) = 6 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q1" value="c" /><span>2⁴ = 16 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q1" value="d" /><span>4×3 = 12 verschillende rijen</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q2" data-answer="a"
+           data-explain="Eén 9 en vier 1’en: kies 1 positie voor de 9 → C(5,1)=5.">
+        <div class="q-num">Vraag 2 · cijfers</div>
+        <p class="prompt">Rijen van 5: één 9 en verder alleen 1. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="a" /><span>C(5,1) = 5 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q2" value="b" /><span>5! = 120 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q2" value="c" /><span>9×1⁴ = 9 verschillende rijen</span></label>
+          <label class="opt"><input type="radio" name="q2" value="d" /><span>C(9,5) = 126 verschillende rijen</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q3" data-answer="c"
+           data-explain="APPEL-achtig: 5 letters met 2×P en 2×L → 5!/(2!2!)=30.">
+        <div class="q-num">Vraag 3 · woord</div>
+        <p class="prompt">Hoeveel verschillende “woorden” uit letters van LEVEL?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="a" /><span>5! = 120 woorden</span></label>
+          <label class="opt"><input type="radio" name="q3" value="b" /><span>5!/2! = 60 woorden</span></label>
+          <label class="opt"><input type="radio" name="q3" value="c" /><span>5!/(2!·2!) = 30 woorden</span></label>
+          <label class="opt"><input type="radio" name="q3" value="d" /><span>C(5,2) = 10 woorden</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q4" data-answer="d"
+           data-explain="Je kiest een set posities — volgorde binnen die set telt niet → combinatie.">
+        <div class="q-num">Vraag 4 · waarom C?</div>
+        <p class="prompt">Waarom is “plaats 2× de 7” een combinatie?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="a" /><span>Omdat er een 7 in het antwoord zit</span></label>
+          <label class="opt"><input type="radio" name="q4" value="b" /><span>Omdat permutaties verboden zijn</span></label>
+          <label class="opt"><input type="radio" name="q4" value="c" /><span>Omdat 5! altijd te groot is</span></label>
+          <label class="opt"><input type="radio" name="q4" value="d" /><span>Omdat je een set posities kiest</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="final"
+           data-v100="Posities kiezen zit vast — dat was V5-type."
+           data-v70="Goed. Klik nog eens door de 7/3-visual."
+           data-v40="Herhaal: eerst posities voor het speciale symbool."
+           data-v0="Bekijk de visual opnieuw, dan de WA-clip.">
+        <strong>Klaar.</strong>
+        <p data-final-msg></p>
+        <p>Volgende: <a href="04-alle-of-precies.html">Les 4 — Alle rijen of precies k?</a></p>
+      </div>
+    </section>
+
+    <p class="cite">
+      Primair: <a href="https://www.youtube.com/watch?v=_Wxur0Lm4Ak" target="_blank" rel="noopener">WA — gelijke elementen</a>
+      · <a href="../reference/telmodellen.html">Kaart</a>
+    </p>
+    <div class="agent-note">
+      <strong>Vraag het de agent</strong> — plak een huiswerksom met herhaalde letters/cijfers.
+    </div>
+  </main>
+  <footer>Les 3</footer>
+  <script src="../assets/viz.js"></script>
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>

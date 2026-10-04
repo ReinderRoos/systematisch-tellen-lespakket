@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Les 2 — Taken of groepje?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/lesson.css" />
+</head>
+<body>
+  <header>
+    <div class="meta">VWO4 · Systematisch tellen · Les 2</div>
+    <h1>Taken of groepje?</h1>
+    <p class="lede">Zelfde mensen, twee vragen. Eerst opsommen met plaatjes — daarna pas de namen permutatie en combinatie.</p>
+    <div class="nav-lessons">
+      <a href="../index.html">Overzicht</a>
+      <a href="../reference/telmodellen.html">Kaart</a>
+      <a href="01-slotjes-herhaling.html">Les 1</a>
+      <a href="02-taken-of-groepje.html" class="here">Les 2</a>
+      <a href="03-herhaalde-symbolen.html">Les 3</a>
+      <a href="04-alle-of-precies.html">Les 4</a>
+      <a href="05-routes-en-mix.html">Les 5</a>
+    </div>
+    <div class="hud">
+      <strong>Voortgang:</strong>
+      <span id="answered">0</span>/<span id="total">0</span> ·
+      <span id="score">0</span> goed
+    </div>
+    <div class="progress-wrap"><div class="progress-bar" id="bar"></div></div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Verhaal: vier sporters, twee plekken</h2>
+      <div class="story">
+        <strong>Situatie.</strong> Dana, Eva, Finn en Gijs doen mee.
+        We kiezen er <em>twee</em> — maar de vraag bepaalt of volgorde telt.
+      </div>
+      <div class="people" aria-label="Vier sporters">
+        <span class="person c0">D</span>
+        <span class="person c1">E</span>
+        <span class="person c2">F</span>
+        <span class="person c3">G</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Vraag A — medailles (wie zit waar?)</h2>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Goud en zilver</h3>
+          <p>
+            Eerst goud, dan zilver. Dana goud + Eva zilver is <em>anders</em> dan Eva goud + Dana zilver.
+            Taken / plekken maken uit → <strong>wie-waar</strong>.
+          </p>
+        </div>
+      </div>
+      <div class="viz" aria-label="Medaille-paren">
+        <div class="viz-title">Eerste rij: goud Dana — alle zilver-opties</div>
+        <div class="outcome-list">
+          <div class="outcome"><span class="mini c0">D</span><span class="arrow">→</span><span class="mini c1">E</span></div>
+          <div class="outcome"><span class="mini c0">D</span><span class="arrow">→</span><span class="mini c2">F</span></div>
+          <div class="outcome"><span class="mini c0">D</span><span class="arrow">→</span><span class="mini c3">G</span></div>
+        </div>
+        <p class="viz-caption">Zo ook met E, F of G als goud. Totaal: 4×3 = <strong>12</strong> medaille-paren.</p>
+        <div class="count-pill">12 = P(4,2)</div>
+      </div>
+      <div class="callout-name">Naam: permutatie — volgorde telt wél</div>
+    </section>
+
+    <section>
+      <h2>Vraag B — clubfoto (wie gaat mee?)</h2>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Alleen een duo op de foto</h3>
+          <p>
+            Geen goud/zilver. Alleen: “welke twee staan op de foto?”
+            Dana+Eva is <em>hetzelfde duo</em> als Eva+Dana.
+            Alleen lidmaatschap → <strong>wie-mee</strong>.
+          </p>
+        </div>
+      </div>
+      <div class="viz" aria-label="Duo’s">
+        <div class="viz-title">Alle duo’s (opsommen)</div>
+        <div class="outcome-list">
+          <div class="outcome"><span class="mini c0">D</span><span class="mini c1">E</span></div>
+          <div class="outcome"><span class="mini c0">D</span><span class="mini c2">F</span></div>
+          <div class="outcome"><span class="mini c0">D</span><span class="mini c3">G</span></div>
+          <div class="outcome"><span class="mini c1">E</span><span class="mini c2">F</span></div>
+          <div class="outcome"><span class="mini c1">E</span><span class="mini c3">G</span></div>
+          <div class="outcome"><span class="mini c2">F</span><span class="mini c3">G</span></div>
+        </div>
+        <p class="viz-caption">
+          Eerst 12 medaille-paren, maar elk duo zat er 2× in (wisselen van goud/zilver).
+          Dus <span class="formula">12 ÷ 2 = 6</span>. Of: <span class="formula">C(4,2) = 6</span>.
+        </p>
+        <div class="count-pill">6 groepjes = C(4,2)</div>
+      </div>
+      <div class="callout-name">Naam: combinatie — volgorde telt niet</div>
+    </section>
+
+    <div class="compare-row">
+      <div class="compare-pane waar">
+        <h3>Wie-waar → P</h3>
+        <p>Kapitein/vice, podium, codes met volgorde, wachtlijst-plekken.</p>
+      </div>
+      <div class="compare-pane mee">
+        <h3>Wie-mee → C</h3>
+        <p>Clubfoto, commissie zonder taken, “kies 3 uit 10” zonder rangorde.</p>
+      </div>
+    </div>
+
+    <div class="watch">
+      <div class="watch-label">Tweede stem · YouTube</div>
+      <p>
+        <a href="https://www.youtube.com/watch?v=Vf4EJctCcXs" target="_blank" rel="noopener">Wijnja — permutaties en combinaties intro</a>
+        (≈8 min)
+      </p>
+      <p class="bridge">
+        Brugzin: waar hij “volgorde wel/niet van belang” zegt, denk
+        <strong>wie-waar</strong> / <strong>wie-mee</strong> — jouw medailles vs clubfoto.
+      </p>
+    </div>
+
+    <div class="watch">
+      <div class="watch-label">Extra · als het nog niet klikt</div>
+      <p>
+        <a href="https://www.youtube.com/watch?v=PbZHAbZsjyU" target="_blank" rel="noopener">WiskundeAcademie — wat zijn combinaties?</a>
+        · of kort:
+        <a href="https://www.youtube.com/watch?v=X-arsIttg5w" target="_blank" rel="noopener">Menno — Combinaties</a>
+      </p>
+      <p class="bridge">
+        Brugzin: let op het moment waarop ze <strong>delen door k!</strong> —
+        dat is precies “elk groepje zat er k! keer in”.
+      </p>
+    </div>
+
+    <section>
+      <h2>Oefenen</h2>
+
+      <div class="q" data-type="mc" data-id="q1" data-answer="a"
+           data-explain="Podium = taken (1e/2e/3e) → wie-waar → 8×7×6.">
+        <div class="q-num">Vraag 1 · podium</div>
+        <p class="prompt">8 teams, goud/zilver/brons. Aantal podiumlijsten?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q1" value="a" /><span>8×7×6 = 336 podiumlijsten</span></label>
+          <label class="opt"><input type="radio" name="q1" value="b" /><span>C(8,3) = 56 podiumlijsten</span></label>
+          <label class="opt"><input type="radio" name="q1" value="c" /><span>8³ = 512 podiumlijsten</span></label>
+          <label class="opt"><input type="radio" name="q1" value="d" /><span>336 : 6 = 56 podiumlijsten</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q2" data-answer="b"
+           data-explain="Geen taken → wie-mee → C(8,3)=56. (336 zou podium zijn.)">
+        <div class="q-num">Vraag 2 · commissie</div>
+        <p class="prompt">Uit 8 leerlingen een clubje van 3, zonder taken. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q2" value="a" /><span>8×7×6 = 336 clubjes</span></label>
+          <label class="opt"><input type="radio" name="q2" value="b" /><span>C(8,3) = 56 clubjes</span></label>
+          <label class="opt"><input type="radio" name="q2" value="c" /><span>8³ = 512 clubjes</span></label>
+          <label class="opt"><input type="radio" name="q2" value="d" /><span>3! = 6 clubjes</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q3" data-answer="c"
+           data-explain="Eerst P(5,2)=20, elk duo 2× → 20/2=10 = C(5,2).">
+        <div class="q-num">Vraag 3 · delen</div>
+        <p class="prompt">Waarom is C(5,2) gelijk aan P(5,2) gedeeld door 2?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q3" value="a" /><span>Omdat er altijd door 2 moet</span></label>
+          <label class="opt"><input type="radio" name="q3" value="b" /><span>Omdat 5 oneven is, dus helft</span></label>
+          <label class="opt"><input type="radio" name="q3" value="c" /><span>Omdat elk duo in 2 volgordes zat</span></label>
+          <label class="opt"><input type="radio" name="q3" value="d" /><span>Omdat combinaties altijd kleiner zijn</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="q" data-type="mc" data-id="q4" data-answer="d"
+           data-explain="Voorzitter + secretaris = twee taken → wie-waar → P(10,2)=90.">
+        <div class="q-num">Vraag 4 · rollen</div>
+        <p class="prompt">Uit 10 personen: voorzitter én secretaris. Aantal?</p>
+        <div class="options">
+          <label class="opt"><input type="radio" name="q4" value="a" /><span>C(10,2) = 45 paar rollen</span></label>
+          <label class="opt"><input type="radio" name="q4" value="b" /><span>10² = 100 paar rollen</span></label>
+          <label class="opt"><input type="radio" name="q4" value="c" /><span>10! = veel te veel rollen</span></label>
+          <label class="opt"><input type="radio" name="q4" value="d" /><span>10×9 = 90 paar rollen</span></label>
+        </div>
+        <div class="actions"><button type="button" data-check-mc>Controleer</button></div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="final"
+           data-v100="Wie-waar / wie-mee zit vast. Dat was dé SO-fout."
+           data-v70="Bijna. Zeg bij elke som hardop: taken of groepje?"
+           data-v40="Herhaal medailles vs clubfoto, dan de clips."
+           data-v0="Begin opnieuw bij vraag A en B — teken de 12 en de 6.">
+        <strong>Klaar.</strong>
+        <p data-final-msg></p>
+        <p>Volgende: <a href="03-herhaalde-symbolen.html">Les 3 — Zelfde symbolen opnieuw</a></p>
+      </div>
+    </section>
+
+    <p class="cite">
+      Primair: <a href="https://www.youtube.com/watch?v=Vf4EJctCcXs" target="_blank" rel="noopener">Wijnja intro</a>
+      · <a href="../reference/telmodellen.html#permutatie">Kaart: permutatie / combinatie</a>
+    </p>
+    <div class="agent-note">
+      <strong>Vraag het de agent</strong> — “Is dit wie-waar of wie-mee?” met jouw somtekst.
+    </div>
+  </main>
+  <footer>Les 2</footer>
+  <script src="../assets/quiz.js"></script>
+</body>
+</html>
